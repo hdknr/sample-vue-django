@@ -2,6 +2,8 @@
 Sample Vue.js + Django
 
 
+## startproject and articles application
+
 ~~~bash
 $ pip install -r requirements/pypi.txt
 $ mkdir -p web
@@ -51,4 +53,23 @@ Password (again):
 Superuser created successfully.
 
 $ python manage.py runserver 0.0.0.0:8000
+~~~
+
+
+## theme
+
+
+~~~bash
+$ python manage.py startapp theme
+$ vim app/settings.py
+~~~
+
+## yarn
+
+~~~bash
+$ pwd
+/vagrant/projects/samples/sample-vue-django/web/theme
+
+$ npm i -g yarn
+$ 
 ~~~

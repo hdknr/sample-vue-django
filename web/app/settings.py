@@ -116,4 +116,5 @@ TIME_ZONE = 'Asia/Tokyo'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 INSTALLED_APPS += [
     'articles',
+    'theme',
 ]

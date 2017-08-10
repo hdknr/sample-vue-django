@@ -71,5 +71,15 @@ $ pwd
 /vagrant/projects/samples/sample-vue-django/web/theme
 
 $ npm i -g yarn
-$ 
+$ yarn add vue
+yarn add v0.27.5
+info No lockfile found.
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+success Saved lockfile.
+success Saved 1 new dependency.
+└─ vue@2.4.2
+Done in 1.29s.
 ~~~

@@ -107,5 +107,5 @@ ENV/
 .DS_Store
 
 # node
-/node_modules/*
-!/node_modules/.gitkeep
+web/theme/node_modules/*
+!web/theme/node_modules/.gitkeep

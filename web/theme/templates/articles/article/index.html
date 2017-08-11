@@ -10,7 +10,12 @@ var app = new Vue({
   el: '#app',
   data: {
     message: 'Hello Vue!',
-    enabled: false
+    enabled: false,
+    todos: [
+     { text: 'Learn JavaScript' },
+     { text: 'Learn Vue' },
+     { text: 'Build something awesome' }
+   ]
   }
 })
 </script>
@@ -28,6 +33,11 @@ var app = new Vue({
   <span v-bind:title="message" v-else>
     <a href="#">Login</a>
   </span>
+
+  {# https://jp.vuejs.org/v2/guide/list.html #}
+  <ol>
+   <li v-for="todo in todos"> {[{ todo.text }]} </li>
+  </ol>
 
 </div>
 {% endblock %}

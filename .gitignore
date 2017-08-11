@@ -109,3 +109,6 @@ ENV/
 # node
 web/theme/node_modules/*
 !web/theme/node_modules/.gitkeep
+
+# django
+web/static

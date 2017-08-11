@@ -118,3 +118,6 @@ INSTALLED_APPS += [
     'articles',
     'theme',
 ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'theme/node_modules'),
+]

@@ -1,3 +1,8 @@
-from django.shortcuts import render
+# coding: utf-8
+from django.template.response import TemplateResponse
 
-# Create your views here.
+
+def index(request):
+    template_name = 'articles/article/index.html'
+    return TemplateResponse(
+        request, template_name, context=dict(request=request))

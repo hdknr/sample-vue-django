@@ -1,1 +1,22 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block bottom %}{{ block.super }}
+<script type="text/javascript" src="{% static 'vue/dist/vue.min.js' %}"></script>
+<script type="text/javascript">
+// https://jp.vuejs.org/v2/guide/#宣言的レンダリング
+Vue.options.delimiters = ['{[{', '}]}'];        // Django テンプレートとバッティングしないように変更
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
+</script>
+{% endblock %}
+
+{% block content %}
+<div id="app">
+  {[{ message }]}
+</div>
+{% endblock %}

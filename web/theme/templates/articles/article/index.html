@@ -19,6 +19,10 @@ ol li.list-group-item {
 <script type="text/javascript">
 // https://jp.vuejs.org/v2/guide/#宣言的レンダリング
 Vue.options.delimiters = ['{[{', '}]}'];        // Django テンプレートとバッティングしないように変更
+Vue.component('article-item',{
+    props: ['article'],
+    template: '{% include "articles/article/article.html" %}'});
+
 var app = new Vue({
   el: '#app',
   data: {
@@ -28,6 +32,11 @@ var app = new Vue({
      { text: 'Learn JavaScript' },
      { text: 'Learn Vue' },
      { text: 'Build something awesome' }
+   ],
+   articles: [
+     {content: 'content #1', id:1 },
+     {content: 'content #2', id:2 },
+     {content: 'content #3', id:3 }
    ]
  },
  methods: {
@@ -35,7 +44,9 @@ var app = new Vue({
       this.message = this.message.split('').reverse().join('')
     }
   }
-})
+});
+
+
 </script>
 {% endblock %}
 
@@ -62,6 +73,10 @@ var app = new Vue({
     {# https://jp.vuejs.org/v2/guide/list.html #}
     <ol class="list-group">
      <li v-for="todo in todos" class="list-group-item"> {[{ todo.text }]} </li>
+    </ol>
+
+    <ol class="list-group">
+       <article-item v-for="i in articles" v-bind:article="i"></article-item>
     </ol>
 
   </div>

@@ -9,7 +9,8 @@ Vue.options.delimiters = ['{[{', '}]}'];        // Django テンプレートと�
 var app = new Vue({
   el: '#app',
   data: {
-    message: 'Hello Vue!'
+    message: 'Hello Vue!',
+    enabled: false
   }
 })
 </script>
@@ -19,10 +20,14 @@ var app = new Vue({
 <div id="app">
   {[{ message }]}
 
-  <span v-bind:title="message">
+  {# https://jp.vuejs.org/v2/guide/conditional.html #}
+  <span v-bind:title="message" v-if="enabled">
    Hover your mouse over me for a few seconds
    to see my dynamically bound title!
- </span>
+  </span>
+  <span v-bind:title="message" v-else>
+    <a href="#">Login</a>
+  </span>
 
 </div>
 {% endblock %}

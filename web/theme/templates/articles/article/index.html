@@ -1,6 +1,19 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
+{% block style %}
+<style>
+ ol.list-group {
+    list-style: decimal inside !important
+}
+
+ol li.list-group-item {
+    display: list-item !important
+}
+</style>
+{% endblock %}
+
+
 {% block bottom %}{{ block.super }}
 <script type="text/javascript" src="{% static 'vue/dist/vue.min.js' %}"></script>
 <script type="text/javascript">
@@ -22,22 +35,35 @@ var app = new Vue({
 {% endblock %}
 
 {% block content %}
-<div id="app">
-  {[{ message }]}
 
-  {# https://jp.vuejs.org/v2/guide/conditional.html #}
-  <span v-bind:title="message" v-if="enabled">
-   Hover your mouse over me for a few seconds
-   to see my dynamically bound title!
-  </span>
-  <span v-bind:title="message" v-else>
-    <a href="#">Login</a>
-  </span>
+<div id="app" class="panel panel-default">
+  <div class="panel-heading">
+    {[{ message }]}
+  </div>
 
-  {# https://jp.vuejs.org/v2/guide/list.html #}
-  <ol>
-   <li v-for="todo in todos"> {[{ todo.text }]} </li>
-  </ol>
+  <div class="panel-body">
+    <ul class="list-group">
+      {# https://jp.vuejs.org/v2/guide/conditional.html #}
+      <li class="list-group-item" v-bind:title="message" v-if="enabled">
+       Hover your mouse over me for a few seconds
+       to see my dynamically bound title!
+      </li>
+
+      <li class="list-group-item" v-bind:title="message" v-else>
+        <a href="#">Login</a>
+      </li>
+    </ul>
+
+    {# https://jp.vuejs.org/v2/guide/list.html #}
+    <ol class="list-group">
+     <li v-for="todo in todos" class="list-group-item"> {[{ todo.text }]} </li>
+    </ol>
+
+  </div>
+
+  <div class="panel-footer">
+  </div>
 
 </div>
+
 {% endblock %}

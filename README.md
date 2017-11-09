@@ -1,5 +1,8 @@
 # sample-vue-django
+
 Sample Vue.js + Django
+
+- vue.js 2
 
 
 ## startproject and articles application

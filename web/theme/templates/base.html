@@ -13,8 +13,7 @@
   <meta name="author" content="{% block author %}{% endblock %}">
   <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Form mobile: -->
 
-  <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap-theme.min.css' %}">
+  {% include 'vue.header.html' %}
   {% block style %}
   {% endblock %}
 
@@ -41,8 +40,7 @@
   {% endblock %}
 
 
-  <script type="text/javascript" src="{% static 'jquery/dist/jquery.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+  {% include 'vue.script.html' %}
   {% block bottom %}
   {% endblock %}
 </body>

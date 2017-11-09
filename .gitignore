@@ -109,6 +109,8 @@ ENV/
 # node
 web/theme/node_modules/*
 !web/theme/node_modules/.gitkeep
+yarn.lock
+web/theme/static/lib
 
 # django
 web/static

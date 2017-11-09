@@ -1,5 +1,8 @@
 # sample-vue-django
+
 Sample Vue.js + Django
+
+- Bootstrap + Vue : https://bootstrap-vue.js.org/
 
 
 ## startproject and articles application
@@ -71,15 +74,97 @@ $ pwd
 /vagrant/projects/samples/sample-vue-django/web/theme
 
 $ npm i -g yarn
-$ yarn add vue
-yarn add v0.27.5
+~~~
+
+~~~bash
+$ yarn add bootstrap-vue bootstrap@4.0.0-beta.2
+
+yarn add v1.2.1
+warning package.json: No license field
 info No lockfile found.
+warning No license field
 [1/4] Resolving packages...
 [2/4] Fetching packages...
 [3/4] Linking dependencies...
+warning "bootstrap@4.0.0-beta.2" has unmet peer dependency "jquery@1.9.1 - 3".
+warning "bootstrap@4.0.0-beta.2" has unmet peer dependency "popper.js@^1.12.3".
+warning "bootstrap-vue@1.0.2" has unmet peer dependency "vue@^2.4.2".
+[4/4] Building fresh packages...
+success Saved lockfile.
+warning Your current version of Yarn is out of date. The latest version is "1.3.2" while you are on "1.2.1".
+info To upgrade, run the following command:
+$ curl -o- -L https://yarnpkg.com/install.sh | bash
+success Saved 47 new dependencies.
+├─ ansi-escapes@1.4.0
+├─ ansi-regex@2.1.1
+├─ ansi-styles@2.2.1
+├─ babel-polyfill@6.23.0
+├─ babel-runtime@6.26.0
+├─ bootstrap-vue@1.0.2
+├─ bootstrap@4.0.0-beta.2
+├─ chalk@1.1.3
+├─ cli-cursor@2.1.0
+├─ cli-width@2.2.0
+├─ core-js@2.5.1
+├─ encoding@0.1.12
+├─ escape-string-regexp@1.0.5
+├─ external-editor@2.0.5
+├─ figures@2.0.0
+├─ has-ansi@2.0.0
+├─ iconv-lite@0.4.19
+├─ inquirer@3.0.6
+├─ is-fullwidth-code-point@2.0.0
+├─ is-promise@2.1.0
+├─ is-stream@1.1.0
+├─ jschardet@1.6.0
+├─ lodash.startcase@4.4.0
+├─ lodash@4.17.4
+├─ mimic-fn@1.1.0
+├─ minimist@1.2.0
+├─ mute-stream@0.0.7
+├─ node-fetch@1.6.3
+├─ object-assign@4.1.1
+├─ onetime@2.0.1
+├─ opencollective@1.0.3
+├─ opn@4.0.2
+├─ os-tmpdir@1.0.2
+├─ pinkie-promise@2.0.1
+├─ pinkie@2.0.4
+├─ popper.js@1.12.6
+├─ regenerator-runtime@0.10.5
+├─ restore-cursor@2.0.0
+├─ run-async@2.3.0
+├─ rx@4.1.0
+├─ signal-exit@3.0.2
+├─ string-width@2.1.1
+├─ strip-ansi@3.0.1
+├─ supports-color@2.0.0
+├─ through@2.3.8
+├─ tmp@0.0.33
+└─ vue-functional-data-merge@1.0.6
+warning No license field
+Done in 22.09s.
+~~~
+
+~~~bash
+$ yarn add vue
+yarn add v1.2.1
+warning package.json: No license field
+warning No license field
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+warning "bootstrap@4.0.0-beta.2" has unmet peer dependency "jquery@1.9.1 - 3".
+warning "bootstrap@4.0.0-beta.2" has unmet peer dependency "popper.js@^1.12.3".
 [4/4] Building fresh packages...
 success Saved lockfile.
 success Saved 1 new dependency.
-└─ vue@2.4.2
-Done in 1.29s.
+└─ vue@2.5.3
+warning No license field
+Done in 18.86s.
+~~~
+
+~~~bash
+$ cd theme/static
+$ ln -s ../node_modules lib
 ~~~

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block bottom %}{{ block.super }}
+<script type="text/javascript">
+  {% include "bootstrap-vue/buttongroup/index.js" %}
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div id="app" >
+
+  <b-tabs>{# https://bootstrap-vue.js.org/docs/components/tabs #}
+
+    <b-tab title="Home" active>
+        {% include 'bootstrap-vue/buttongroup/home.html' %}
+    </b-tab>
+
+    <b-tab title="Sizing" >
+        {% include 'bootstrap-vue/buttongroup/sizing.html' %}
+    </b-tab>
+
+    <b-tab title="Vertical" >
+        {% include 'bootstrap-vue/buttongroup/vertical.html' %}
+    </b-tab>
+
+    <b-tab title="Dripdown" >
+        {% include 'bootstrap-vue/buttongroup/dropdown.html' %}
+    </b-tab>
+
+  </b-tabs>
+
+  
+</div>
+
+{% endblock %}

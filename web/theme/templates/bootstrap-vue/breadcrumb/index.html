@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block bottom %}{{ block.super }}
+<script type="text/javascript">
+  {% include "bootstrap-vue/breadcrumb/index.js" %}
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div id="app" >
+
+
+
+
+  <b-list-group>
+    <b-list-group-item active >   <b-breadcrumb :items="items"/> </b-list-group-item>
+
+    <b-list-group-item id="crumb2">
+        <b-breadcrumb :items="items2"> </b-breadcrumb>
+        : セパレータなどのスタイルはCSS で変更
+    </b-list-group-item>
+
+  </b-list-group>
+
+</div>
+
+{% endblock %}
+
+
+{% block style %}
+<style>
+#crumb2 .breadcrumb {
+  background:transparent;
+}
+#crumb2 .breadcrumb li+li:before {
+  content:'»';
+}
+</style>
+{% endblock %}

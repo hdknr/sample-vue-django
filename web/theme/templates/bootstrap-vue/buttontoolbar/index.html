@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block bottom %}{{ block.super }}
+<script type="text/javascript">
+  {% include "bootstrap-vue/buttontoolbar/index.js" %}
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div id="app" >
+
+  <b-tabs>{# https://bootstrap-vue.js.org/docs/components/tabs #}
+
+    <b-tab title="Home" active>
+        {% include 'bootstrap-vue/buttontoolbar/home.html' %}
+    </b-tab>
+
+    <b-tab title="Sample 2">
+        {% include 'bootstrap-vue/buttontoolbar/sample2.html' %}
+    </b-tab>
+
+    <b-tab title="Sample 3">
+        {% include 'bootstrap-vue/buttontoolbar/sample3.html' %}
+    </b-tab>
+  </b-tabs>
+
+</div>
+
+{% endblock %}

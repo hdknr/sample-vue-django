@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block bottom %}{{ block.super }}
+<script type="text/javascript">
+  {% include "bootstrap-vue/home/index.js" %}
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div id="app" >
+
+ {# https://bootstrap-vue.js.org/docs/components/list-group #}
+  <b-list-group>
+    <b-list-group-item active href="{% url 'vue_component' component='alert' %}">Alert</b-list-group-item>
+    <b-list-group-item href="#"> </b-list-group-item>
+    <b-list-group-item> </b-list-group-item>
+  </b-list-group>
+
+</div>
+
+{% endblock %}

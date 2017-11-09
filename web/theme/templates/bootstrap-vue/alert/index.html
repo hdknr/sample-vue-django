@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block bottom %}{{ block.super }}
+<script type="text/javascript">
+  {% include "bootstrap-vue/alert/index.js" %}
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div id="app" >
+
+  <b-tabs>{# https://bootstrap-vue.js.org/docs/components/tabs #}
+
+    <b-tab title="Home" active>
+        {% include 'bootstrap-vue/alert/home.html' %}
+    </b-tab>
+
+    <b-tab title="Contexual" >
+        {% include 'bootstrap-vue/alert/contexual.html' %}
+    </b-tab>
+
+    <b-tab title="Content" >
+        {% include 'bootstrap-vue/alert/content.html' %}
+    </b-tab>
+
+    <b-tab title="Link Color" >
+        {% include 'bootstrap-vue/alert/linkcolor.html' %}
+    </b-tab>
+
+    <b-tab title="Dismissible" >
+        {% include 'bootstrap-vue/alert/dismissible.html' %}
+    </b-tab>
+
+    <b-tab title="Auto Dismissing" >
+        {% include 'bootstrap-vue/alert/auto-dismissing.html' %}
+    </b-tab>
+
+  </b-tabs>
+
+</div>
+
+{% endblock %}

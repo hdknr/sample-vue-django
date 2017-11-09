@@ -1,0 +1,36 @@
+<div>
+  <b-alert show>デフォルト(variant指定なし)アラート</b-alert>
+
+  <b-alert variant="success" show>成功時アラート</b-alert>
+
+  <b-alert variant="danger"
+           dismissible                              {# [x] で消せるアラート #}
+           :show="showDismissibleAlert"             {# show ステートのバインド変数 #}
+           @dismissed="showDismissibleAlert=false"> {# dismiss した時のイベントハンドラ(インライン) #}
+    消去可能アラート!
+  </b-alert>
+
+  <b-alert :show="dismissCountDown"                {# show ステートのバインド変数 #}
+           dismissible                             {# [x] で消せるアラート #}
+           variant="warning"                       {# アラートの種別 #}
+           @dismissed="dismissCountDown=0"         {# dismiss した時のイベントハンドラ(インライン) #}
+           @dismiss-count-down="countDownChanged"> {# カウントダウンのイベントハンドラ #}
+    <p>この警告は{[{ dismissCountDown }]}秒後に消えます...</p>
+
+    {# プログレスインジケータ : https://bootstrap-vue.js.org/docs/components/progress #}
+    <b-progress variant="warning"
+                :max="dismissSecs"
+                :value="dismissCountDown"
+                height="4px">
+    </b-progress>
+
+  </b-alert>
+
+  <b-btn @click="showAlert" variant="info" class="m-1">
+    カウントダウンタイマー付きのアラートの表示
+  </b-btn>
+
+  <b-btn @click="showDismissibleAlert=true" variant="info" class="m-1">
+    消去可能なアラートの表示({[{ showDismissibleAlert?'visible':'hidden' }]})
+  </b-btn>
+</div>

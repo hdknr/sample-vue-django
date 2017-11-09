@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block bottom %}{{ block.super }}
+<script type="text/javascript">
+  {% include "bootstrap-vue/home/index.js" %}
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div id="app" >
+
+  <b-tabs>{# https://bootstrap-vue.js.org/docs/components/tabs #}
+
+    <b-tab title="Home" active>
+        {% include 'bootstrap-vue/badge/home.html' %}
+    </b-tab>
+
+    <b-tab title="Counter" >
+        {% include 'bootstrap-vue/badge/counter.html' %}
+    </b-tab>
+
+    <b-tab title="Contexual" >
+        {% include 'bootstrap-vue/badge/contexual.html' %}
+    </b-tab>
+
+    <b-tab title="Pill" >
+        {% include 'bootstrap-vue/badge/pill.html' %}
+    </b-tab>
+
+    <b-tab title="Actionable">
+        {% include 'bootstrap-vue/badge/actionable.html' %}
+    </b-tab>
+
+  </b-tabs>
+</div>
+
+{% endblock %}

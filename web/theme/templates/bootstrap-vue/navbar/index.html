@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block bottom %}{{ block.super }}
+<script type="text/javascript">
+  {% include "bootstrap-vue/navbar/index.js" %}
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div id="app" >
+  <h3><b-link href="https://bootstrap-vue.js.org/docs/components/navbar">Navbar</a></h3>
+
+  <b-tabs>{# https://bootstrap-vue.js.org/docs/components/tabs #}
+
+    <b-tab title="Home" active>
+        {% include 'bootstrap-vue/navbar/home.html' %}
+    </b-tab>
+
+  </b-tabs>
+
+
+</div>
+
+{% endblock %}

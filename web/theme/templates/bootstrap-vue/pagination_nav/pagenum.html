@@ -1,0 +1,11 @@
+<div>
+   <b-pagination-nav :link-gen="linkGenNum"
+                     :page-gen="pageGenNum"
+                     :number-of-pages="links.length"
+                     v-model="currentPageNum" />
+   <br>
+   <p>
+     Page #: {{ currentPage }}<br>
+     Page Link: {{ pageLinkNum }}
+   </p>
+ </div>

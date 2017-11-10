@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block bottom %}{{ block.super }}
+<script type="text/javascript">
+  {% include "bootstrap-vue/form_group/index.js" %}
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div id="app" class="container">
+
+  <h3><b-link href="https://bootstrap-vue.js.org/docs/components/form-group">Form Group</a></h3>
+
+  <b-tabs>{# https://bootstrap-vue.js.org/docs/components/tabs #}
+
+    <b-tab title="Simple" active>
+        {% include 'bootstrap-vue/form_group/home.html' %}
+    </b-tab>
+
+    <b-tab title="Horizontal">
+        {% include 'bootstrap-vue/form_group/horizontal.html' %}
+    </b-tab>
+  </b-tabs>
+</div>
+
+{% endblock %}

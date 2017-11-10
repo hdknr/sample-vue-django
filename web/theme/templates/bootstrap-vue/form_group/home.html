@@ -1,0 +1,29 @@
+<b-card>
+  <b-form-group
+      id="fieldset1"
+      description="お名前を入力おねがいします。"
+      label="姓名"
+      :feedback="feedback"
+      :state="state">
+    <b-form-input id="input1" :state="state" v-model.trim="name"></b-form-input>
+  </b-form-group>
+</b-card>
+
+<b-card>
+  <b-alert variant="success" show>
+    <strong>`state`</strong>
+
+    <b-form-group label='invalid'> <b-form-input state="invalid" /> </b-form-group>
+    <b-form-group label='valid'> <b-form-input state="valid" /> </b-form-group>
+    <b-form-group label='null'> <b-form-input state="null" /> </b-form-group>
+
+  </b-alert>
+</b-card>
+
+
+<b-card>
+  <b-alert variant="info" show>
+    <strong>`b-form-group`</strong>
+    `b-form-fieldset` でもいいです
+  </b-alert>
+</b-card>

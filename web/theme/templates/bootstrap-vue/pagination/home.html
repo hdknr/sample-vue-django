@@ -1,0 +1,27 @@
+<div>
+    <h6>Default</h6>
+    <b-pagination size="md" :total-rows="totalRows" v-model="currentPage" :per-page="perPage">
+    </b-pagination>
+    <br>
+
+    <h6>Small</h6>
+    <b-pagination size="sm" :total-rows="totalRows" v-model="currentPage" :per-page="perPage">
+    </b-pagination>
+    <br>
+
+    <h6>Large</h6>
+    <b-pagination size="lg" :total-rows="totalRows" v-model="currentPage" :per-page="perPage">
+    </b-pagination>
+    <br>
+
+      <b-form inline>
+        <label class="mr-sm-2" for="currentPage">CurrentPage</label>
+        <b-input class="mb-2 mr-sm-2 mb-sm-0" id="currentPage" v-model="currentPage" placeholder="Current Page"></b-input>
+
+        <label class="mr-sm-2" for="perPage">Rows/Page</label>
+        <b-input class="mb-2 mr-sm-2 mb-sm-0" id="perPage" v-model="perPage" placeholder="Rows/Page"></b-input>
+
+        <label class="mr-sm-2" for="totalRows">Total Rows</label>
+        <b-input class="mb-2 mr-sm-2 mb-sm-0" id="totalRows" v-model="totalRows" placeholder="Total Rows"></b-input>
+      </b-form>
+</div>

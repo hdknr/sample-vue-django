@@ -1,0 +1,39 @@
+<div>
+  <h2>Single</h2>
+  <b-form-checkbox v-model="checked" :indeterminate.sync="indeterminate">
+    Click me to see what happens
+  </b-form-checkbox>
+
+  <div class="mt-3">
+    Checked: <strong>{[{ checked }]}</strong><br>
+    Indeterminate: <strong>{[{ indeterminate }]}</strong>
+  </div>
+  <b-btn @click="toggleIndeterminate">Toggle Indeterminate State</b-btn>
+
+
+  <h2>Multi</h2>
+  <b-card>
+   <b-form-checkbox v-model="allSelected"
+                    :indeterminate="indeterminate"
+                    aria-describedby="flavours"
+                    aria-controls="flavours"
+                    @change="toggleAll"
+    >
+     {[{ allSelected ? 'Un-select' : 'Select' }]}
+     All Flavors
+   </b-form-checkbox>
+   <b-form-checkbox-group id="flavors"
+                          stacked
+                          v-model="tri_selected"
+                          name="flavs"
+                          :options="flavours"
+                          class="ml-3"
+                          aria-label="Individual flavours"
+   ></b-form-checkbox-group>
+   <p aria-live="polite">
+     Selected: <strong>{[{ tri_selected }]}</strong><br>
+     All Selected: <strong>{[{ allSelected }]}</strong><br>
+     Indeterminate: <strong>{[{ indeterminate }]}</strong><br>
+   </p>
+ </b-card>
+</div>

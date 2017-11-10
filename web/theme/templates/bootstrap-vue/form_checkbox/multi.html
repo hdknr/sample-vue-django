@@ -1,0 +1,15 @@
+<div>
+  <h5>Using options array:</h5>
+  <b-form-checkbox-group id="checkboxes1" name="flavour1" v-model="selected" :options="options">
+  </b-form-checkbox-group>
+
+  <h5 class="mt-3">Using sub-components:</h5>
+  <b-form-checkbox-group id="checkboxes2" name="flavour2" v-model="selected">
+    <b-form-checkbox value="orange">Orange</b-form-checkbox>
+    <b-form-checkbox value="apple">Apple</b-form-checkbox>
+    <b-form-checkbox value="pineapple">Pineapple</b-form-checkbox>
+    <b-form-checkbox value="grape">Grape</b-form-checkbox>
+  </b-form-checkbox-group>
+  <hr>
+  <div>Selected: <strong>{[{ selected }]}</strong></div>
+</div>

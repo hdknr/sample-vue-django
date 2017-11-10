@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block bottom %}{{ block.super }}
+<script type="text/javascript">
+  {% include "bootstrap-vue/form_checkbox/index.js" %}
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div id="app" >
+  <b-tabs>{# https://bootstrap-vue.js.org/docs/components/tabs #}
+
+    <b-tab title="Single" active>
+        {% include 'bootstrap-vue/form_checkbox/single.html' %}
+    </b-tab>
+
+    <b-tab title="Multi" >
+        {% include 'bootstrap-vue/form_checkbox/multi.html' %}
+    </b-tab>
+
+    <b-tab title="Inline" >
+        {% include 'bootstrap-vue/form_checkbox/inline.html' %}
+    </b-tab>
+
+    <b-tab title="Stacked" >
+        {% include 'bootstrap-vue/form_checkbox/stacked.html' %}
+    </b-tab>
+
+    <b-tab title="Buttons" >
+        {% include 'bootstrap-vue/form_checkbox/buttons.html' %}
+    </b-tab>
+
+    <b-tab title="Plain" >
+        {% include 'bootstrap-vue/form_checkbox/plain.html' %}
+    </b-tab>
+
+    <b-tab title="Tri-State" >
+        {% include 'bootstrap-vue/form_checkbox/tri-state.html' %}
+    </b-tab>
+  </b-tabs>
+</div>
+
+{% endblock %}

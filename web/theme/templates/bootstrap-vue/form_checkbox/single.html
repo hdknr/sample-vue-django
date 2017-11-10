@@ -1,0 +1,35 @@
+<div>
+    <b-form-checkbox id="checkbox1"
+                     v-model="status"
+                     value="accepted"
+                     unchecked-value="not_accepted">
+      I accept the terms and use
+    </b-form-checkbox>
+    <div>State: <strong>{[{ status }]}</strong></div>
+
+    <hr>
+    {# https://bootstrap-vue.js.org/docs/components/form-group/ #}
+    <b-form-group
+      id="fieldset1"
+      description="Let us know your name."
+      label="Enter your name"
+      :feedback="form_group_feedback"
+      :state="form_group_state" >
+
+      <b-form-checkbox id="checkbox2" v-model="default_status">
+        満足いただけました？
+      </b-form-checkbox>
+
+      <div>State: <strong>{[{ default_status }]}</strong></div>
+    </b-form-group>
+
+    <hr>
+
+    <b-list-group>
+      <b-list-group-item> value: チェックされた時の値(指定しないと true) </b-list-group-item>
+      <b-list-group-item> unchecked-value: チェックされない時の値(指定しないと false) </b-list-group-item>
+      <b-list-group-item> b-form-checkbox-group: b-checkbox-groupもしくは、b-check-group でもよい </b-list-group-item>
+      <b-list-group-item> b-form-checkbox: b-checkboxもしくは、b-check でもよい </b-list-group-item>
+    </b-list-group>
+
+</div>

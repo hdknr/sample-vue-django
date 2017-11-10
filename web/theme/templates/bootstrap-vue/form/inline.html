@@ -1,0 +1,42 @@
+<div style="margin: 20px">
+<b-card>
+
+  <b-form inline>
+    <label class="sr-only" for="inlineFormInputName2">Name</label>
+    <b-input class="mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputName22" placeholder="Jane Doe"></b-input>
+
+    <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+    <b-input-group left="@" class="mb-2 mr-sm-2 mb-sm-0">
+        <b-input id="inlineFormInputGroupUsername22" placeholder="Username" />
+    </b-input-group>
+
+    <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0">Remember me</b-form-checkbox>
+
+    <b-button variant="primary">Save</b-button>
+  </b-form>
+</b-card>
+
+
+<b-card>
+  <b-form inline>
+    <label class="mr-sm-2" for="inlineFormCustomSelectPref">Preference</label>
+    <b-form-select class="mb-2 mr-sm-2 mb-sm-0"
+                   :value="null"
+                   :options="{ '1': 'One', '2': 'Two', '3': 'Three' }"
+                   id="inlineFormCustomSelectPref">
+      <option slot="first" :value="null">Choose...</option>
+    </b-form-select>
+    <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0">
+      Remember my preference
+    </b-form-checkbox>
+    <b-button variant="primary">Save</b-button>
+  </b-form>
+</b-card>
+
+<b-card>
+  <b-alert variant="danger" show>
+    <strong>b-form-groupはinlineでつかえません！j</strong>
+    <div>レイアウト競合するので </div>
+  </b-alert>
+</b-card>
+</div>

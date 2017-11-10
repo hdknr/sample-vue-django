@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block bottom %}{{ block.super }}
+<script type="text/javascript">
+  {% include "bootstrap-vue/form/index.js" %}
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div id="app" >
+
+  <h3><b-link href="https://bootstrap-vue.js.org/docs/components/form">Form</a></h3>
+
+  <b-tabs>{# https://bootstrap-vue.js.org/docs/components/tabs #}
+
+    <b-tab title="Horizontal" active>
+        {% include 'bootstrap-vue/form/home.html' %}
+    </b-tab>
+
+    <b-tab title="Inline">
+        {% include 'bootstrap-vue/form/inline.html' %}
+    </b-tab>
+  </b-tabs>
+
+</div>
+
+{% endblock %}

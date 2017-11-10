@@ -1,0 +1,12 @@
+<div>
+  <!-- Simple File -->
+  <b-form-file id="file_input_multi" multiple v-model="files" ref="fileinput"></b-form-file>
+  <ul><li v-for="i in merged"><span @click="removeItem(i)">{[{ i.name }]}</span></li></ul>
+  <b-button @click="clearFiles">Reset</b-button>
+
+  <b-alert variant="warning" show><strong>ファイルを追加するには？</strong>
+    <div>
+      とりあえず、マージリストを作って、それに追加していく方式。
+    </div>
+  </b-alert>
+</div>

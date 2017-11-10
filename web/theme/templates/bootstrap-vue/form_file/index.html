@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block bottom %}{{ block.super }}
+<script type="text/javascript">
+  {% include "bootstrap-vue/form_file/index.js" %}
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div id="app" >
+
+  <b-tabs>{# https://bootstrap-vue.js.org/docs/components/tabs #}
+
+    <b-tab title="Simple" active>
+        {% include 'bootstrap-vue/form_file/home.html' %}
+    </b-tab>
+
+    <b-tab title="Multi">
+        {% include 'bootstrap-vue/form_file/multi.html' %}
+    </b-tab>
+
+  </b-tabs>
+</div>
+
+{% endblock %}

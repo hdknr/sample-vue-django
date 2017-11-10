@@ -1,0 +1,35 @@
+<div>
+  {# https://bootstrap-vue.js.org/docs/components/button/ #}
+  <b-btn v-b-modal.modal91>Launch demo modal</b-btn>
+
+  <div class="mt-3 mb-3">
+    Submitted Names:
+    <ul>
+      <li v-for="n in names">{[{ n }]}</li>
+    </ul>
+  </div>
+
+  <!-- Modal Component -->
+  <b-modal id="modal91"
+            ref="modal"
+            title="Submit your name"
+            @ok="handleOk"
+            @shown="onShown">
+     <form @submit.stop.prevent="handleSubmit">
+       <b-form-input type="text"
+          ref="yourName"
+          placeholder="Enter your name"
+          v-model="name"></b-form-input>
+       </form>
+  </b-modal>
+
+</div>
+
+
+
+<b-list-group>
+  <b-list-group-item >ダイアログがオープンしたら入力フィールドにフォーカスを当てています</b-list-group-item >
+  <b-list-group-item >return-focus: モーダルを閉じた時のフォーカスの戻し先</b-list-group-item >
+  <b-list-group-item > no-enforce-focus: フォーカスを無理強いしたく無い時 </b-list-group-item >
+  <b-list-group-item ></b-list-group-item >
+</b-list-group>

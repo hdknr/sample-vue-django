@@ -1,0 +1,27 @@
+<div>
+  {# https://bootstrap-vue.js.org/docs/components/button/ #}
+  <b-btn v-b-modal.modal1>Launch demo modal</b-btn>
+
+  <!-- Modal Component -->
+  <b-modal id="modal1" title="Bootstrap-Vue">
+    <p class="my-4">Hello from modal!</p>
+  </b-modal>
+
+
+  <b-list-group>
+    <b-list-group-item >デフォルトで OK, Cancelボタン</b-list-group-item>
+    <b-list-group-item >ボタンはカスタマイズ可能</b-list-group-item>
+    <b-list-group-item >ok-variant, ok-title</b-list-group-item>
+    <b-list-group-item >タイトル: modal-title</b-list-group-item>
+    <b-list-group-item >ヘッダー: modal-header</b-list-group-item>
+    <b-list-group-item >フッター: modal-footer/ フッタースロット使うと OK/Cancelボタンは自前で設定すること</b-list-group-item>
+    <b-list-group-item >[ESC]キーで閉じるなどのデフォルトの処理の無効化: no-close-on-esc, no-close-on-backdrop, hide-header-close</b-list-group-item>
+    <b-list-group-item >アニメーション: 切りたかったら no-fade </b-list-group-item>
+    <b-list-group-item > lazy: 初期に modal のマークアップをDOMに出したくなかったら </b-list-group-item >
+    <b-list-group-item >cancel-disabled, ok-disabled を trueにすると使えなくなる</b-list-group-item >
+    <b-list-group-item >busy: true にすると OK/Cancelともに使えなくなる</b-list-group-item >
+    <b-list-group-item >aria-labelledby</b-list-group-item >
+    <b-list-group-item ></b-list-group-item >
+  </b-list-group>
+
+</div>

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block bottom %}{{ block.super }}
+{% include 'bootstrap-vue/modals/emit_child.html' %}
+<script type="text/javascript">
+  {% include "bootstrap-vue/modals/index.js" %}
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div id="app" >
+
+  <b-tabs>{# https://bootstrap-vue.js.org/docs/components/tabs #}
+
+    <b-tab title="Home" active>
+        {% include 'bootstrap-vue/modals/home.html' %}
+    </b-tab>
+
+    <b-tab title="Visibility(v-b-modal)">
+        {% include 'bootstrap-vue/modals/v-b-modal.html' %}
+    </b-tab>
+
+    <b-tab title="Visibility(show/hide method)">
+        {% include 'bootstrap-vue/modals/show-hide.html' %}
+    </b-tab>
+
+    <b-tab title="Visibility(v-model)">
+        {% include 'bootstrap-vue/modals/v-model.html' %}
+    </b-tab>
+
+    <b-tab title="Emit Events">
+        {% include 'bootstrap-vue/modals/emit.html' %}
+    </b-tab>
+
+    <b-tab title="Prevent Closing(gate)">
+        {% include 'bootstrap-vue/modals/gate.html' %}
+    </b-tab>
+
+    <b-tab title="Sizing">
+        {% include 'bootstrap-vue/modals/size.html' %}
+    </b-tab>
+
+    <b-tab title="Vertical Centering">
+        {% include 'bootstrap-vue/modals/vcenter.html' %}
+    </b-tab>
+
+    <b-tab title="Grid">
+        {% include 'bootstrap-vue/modals/grid.html' %}
+    </b-tab>
+
+    <b-tab title="Tooltip/Popover">
+        {% include 'bootstrap-vue/modals/popover.html' %}
+    </b-tab>
+
+    <b-tab title="Variants">
+        {% include 'bootstrap-vue/modals/variants.html' %}
+    </b-tab>
+
+  </b-tabs>
+</div>
+
+{% endblock %}

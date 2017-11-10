@@ -1,0 +1,13 @@
+<script type="text/x-template" id="emit-child-template">
+<div>
+  <b-button @click="showModal" ref="btnShow"> ダイアログを開きます </b-button>
+
+  <b-modal @hidden="onHidden" id="dialog1">
+
+      <div class="d-block">Hello From My Modal!</div>
+
+      <b-btn @click="hideModal">クリックして閉じます</b-btn>
+
+  </b-modal>
+</div>
+</script>

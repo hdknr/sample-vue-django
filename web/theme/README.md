@@ -17,3 +17,11 @@ $ vim assets/js/main.js
 ~~~bash
 $ ./node_modules/.bin/webpack --config webpack/webpack.config.js
 ~~~
+
+## Requires
+
+- https://babeljs.io/docs/usage/polyfill/
+
+## Resource
+
+- https://qiita.com/nakapython/items/bd8580397fc2615b9dd8

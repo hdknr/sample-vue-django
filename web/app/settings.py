@@ -115,10 +115,16 @@ LANGUAGE_CODE = 'ja'
 TIME_ZONE = 'Asia/Tokyo'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 INSTALLED_APPS += [
+    'rest_framework', 'django_filters',     # REST FRAMEWORDK
+    'bv',                                   # bootstrap-vue
     'articles',
-    'bv',           # bootstrap-vue
-    'theme',
+    'theme',                                # base layout
 ]
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'theme/node_modules'),
 ]
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend', ),
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 5
+}

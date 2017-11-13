@@ -20,5 +20,6 @@ from django.views.static import serve
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^bv/', include('bv.urls')),           # bootstrap-vue sample
+    url(r'^bv/', include('bv.urls')),               # bootstrap-vue sample
+    url(r'^articles/', include('articles.urls')),   # articles
 ]

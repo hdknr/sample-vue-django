@@ -1,12 +1,21 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
+{% block style %}{{ block.super }}
+<style>
+{% include 'articles/article/app.css' %}
+</style>
+{% endblock %}
+
 {% block bottom %}{{ block.super }}
+{% include 'articles/article/grid.html' %}
 <script type="text/javascript">
+{% include 'articles/article/app.js' %}
 </script>
 {% endblock %}
 
 {% block content %}
 
+{% include 'articles/article/app.html' %}
 
 {% endblock %}

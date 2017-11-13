@@ -112,5 +112,10 @@ web/theme/node_modules/*
 yarn.lock
 web/theme/static/lib
 
+# webpack
+web/theme/webpack/stats.json
+web/theme/static/bundles
+
 # django
 web/static
+

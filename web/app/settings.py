@@ -120,11 +120,18 @@ INSTALLED_APPS += [
     'articles',
     'theme',                                # base layout
 ]
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'theme/node_modules'),
-]
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend', ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 5
+}
+# Webpack
+INSTALLED_APPS += [
+    'webpack_loader',
+]
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'bundles/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'theme/webpack/stats.json'),
+    }
 }

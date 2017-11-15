@@ -1,0 +1,12 @@
+{% extends 'bootstrap-vue/base.html' %}
+{% load staticfiles %}
+
+{% block bottom %}{{ block.super }}
+<script type="text/javascript">
+  {% include "bootstrap-vue/howto/dragdrop/index.js" %}
+</script>
+{% endblock %}
+
+{% block article_sections %}
+
+{% endblock %}

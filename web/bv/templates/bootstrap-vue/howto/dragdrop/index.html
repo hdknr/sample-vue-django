@@ -9,4 +9,22 @@
 
 {% block article_sections %}
 
+<b-container fluid v-show="visible" >
+
+  <b-row id="slide-container" v-if="mediafiles.length > 0">
+
+      <b-col cols="1"
+        v-for="(media, position) in mediafiles"
+        v-bind:mediafile-id="media.id"
+        @dragstart="on_dragstart(position, $event)"
+        @dragenter="on_dragenter(position, $event)"
+        @dragend="on_drop($event)"
+        draggable="true">
+
+        <span>{[{ media.data }]}</span>
+
+      </b-col>
+  </b-row>
+</b-container>
+
 {% endblock %}

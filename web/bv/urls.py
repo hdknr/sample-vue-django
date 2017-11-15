@@ -6,5 +6,5 @@ from . import views
 urlpatterns = [
     url(r'^howto/(?P<name>.+)', views.howto, name="vue_howto"),
     url(r'(?P<component>.+)', views.component, name="vue_component"),
-    url(r'^$', views.index),
+    url(r'^$', views.index, name="vue_index"),
 ]

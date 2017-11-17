@@ -1,0 +1,41 @@
+{% extends 'bootstrap-vue/base.html' %}
+{% load staticfiles %}
+
+{% block sytle %} {{ block.super }}
+<style>
+div.profile { padding:10px; }
+</style>
+{% endblock %}
+
+{% block bottom %}{{ block.super }}
+
+{% include "bootstrap-vue/howto/components/component_email.html" %}
+{% include "bootstrap-vue/howto/components/component_location.html" %}
+{% include "bootstrap-vue/howto/components/component_name.html" %}
+{% include "bootstrap-vue/howto/components/component_phone.html" %}
+
+<script type="text/javascript">
+  Vue.options.delimiters = ['{[{', '}]}'];        // Django テンプレートとバッティングしないように変更
+  {% include "bootstrap-vue/howto/components/component_email.js" %}
+  {% include "bootstrap-vue/howto/components/component_location.js" %}
+  {% include "bootstrap-vue/howto/components/component_name.js" %}
+  {% include "bootstrap-vue/howto/components/component_phone.js" %}
+  //
+  {% include "bootstrap-vue/howto/components/index.js" %}
+</script>
+{% endblock %}
+
+{% block article_title %}
+Dynamic Components
+{% endblock %}
+
+{% block article_sections %}
+<b-form>
+    <component :is="item.attr" v-bind:item="item" v-for="(item, index) in profiles"></component>
+</b-form>
+
+<b-row>
+  <b-button @click="add_item('c-email', 'Email+')">Email + </b-button>
+  <b-button @click="add_item('c-phone', 'Phone+')">Phone + </b-button>
+</b-row>
+{% endblock %}

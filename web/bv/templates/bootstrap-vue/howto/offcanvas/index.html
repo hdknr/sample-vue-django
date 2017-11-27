@@ -1,0 +1,53 @@
+{% extends 'bootstrap-vue/base.html' %}
+{% load staticfiles %}
+
+{% block style %} {{ block.super }}
+<style>
+
+.sidenav {
+    top: 0; left: 0;
+    height: 100%; width: 0;
+    position: fixed;
+    z-index: 1;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;        // same as '#main'.transition
+}
+
+#main {
+    transition: margin-left .5s;
+}
+</style>
+{% endblock %}
+
+{% block bottom %}{{ block.super }}
+<script type="text/javascript">
+  {% include "bootstrap-vue/howto/offcanvas/index.js" %}
+</script>
+<script type="text/javascript">
+</script>
+{% endblock %}
+
+{% block article_title %}
+{% endblock %}
+
+{% block article_sections %}
+
+  <div id="mySidenav" class="sidenav" :style="{width: width}">
+    <b-container fluild>
+      <b-button-close @click="closeSideBar">&times;</b-button-close>
+      <b-list-group>
+        <b-list-group-item> Awesome list </b-list-group-item>
+        <b-list-group-item> Action links are easy </b-list-group-item>
+        <b-list-group-item> This is a text only item </b-list-group-item>
+      </b-list-group>
+    </b-container>
+  </div>
+
+  <div id="main" :style="{marginLeft: marginLeft}">
+    <h2>Sidenav Push Example</h2>
+    <p>https://www.w3schools.com/howto/howto_js_off-canvas.asp</p>
+    <b-button @click="openSideBar">Open</b-button>
+  </div>
+{% endblock %}

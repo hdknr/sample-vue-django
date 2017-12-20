@@ -122,3 +122,34 @@ new Vue({
 ~~~bash
 $ webpack --config webpack.config.js
 ~~~
+
+## multiple bundles
+
+~~~js
+
+module.exports = {
+  entry: {
+    index: './src/index.js',
+    main: './src/main.js',
+  },
+  output: {
+    filename: '[name].bundle.js'
+  },
+  ...
+}
+~~~
+
+~~~bash
+$ webpack --config webpack.config.js
+~~~
+
+~~~bash
+$ tree sample/static/sample/bundles
+sample/static/sample/bundles
+├── build.js
+├── index.bundle.js
+├── logo.png
+└── main.bundle.js
+
+0 directories, 4 files
+~~~

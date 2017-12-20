@@ -3,11 +3,14 @@ var webpack = require('webpack')
 var modules = require('./modules.json')
 
 module.exports = {
-  entry: './src/main.js',
+  entry: {
+    index: './src/index.js',
+    main: './src/main.js',
+  },
   output: {
     path: path.resolve(__dirname, './static/sample/bundles/'),
     publicPath: '/static/sample/bundles',
-    filename: 'build.js'
+    filename: '[name].bundle.js'
   },
   module: {
     rules: [

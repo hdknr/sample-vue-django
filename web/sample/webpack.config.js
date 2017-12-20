@@ -1,11 +1,12 @@
 var path = require('path')
 var webpack = require('webpack')
+var modules = require('./modules.json')
 
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    path: path.resolve(__dirname, './static/sample/bundles/'),
+    publicPath: '/static/sample/bundles',
     filename: 'build.js'
   },
   module: {
@@ -73,6 +74,7 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
     },
+    modules: modules,
     extensions: ['*', '.js', '.vue', '.json']
   },
   devServer: {

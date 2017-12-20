@@ -5,7 +5,7 @@ var modules = require('./modules.json')
 module.exports = {
   entry: {
     index: './src/index.js',
-    main: './src/main.js',
+    detail: './src/detail.js',
   },
   output: {
     path: path.resolve(__dirname, './static/sample/bundles/'),

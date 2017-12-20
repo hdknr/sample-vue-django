@@ -3,17 +3,20 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>webapp</title>
+    <title>Detail</title>
   </head>
 
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <b-container>
+      <h1>{[{ instance.title }]}</h1>
+      </b-container>
+    </div>
     <script>
       window.Django = {
           static_base: "{% static '' %}",
       };
     </script>
-    <script src="{% static 'sample/bundles/index.bundle.js' %}"></script>
-
+    <script src="{% static 'sample/bundles/detail.bundle.js' %}"></script>
   </body>
 </html>

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img :src="static_url('sample/bundles/logo.png')">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
@@ -16,12 +16,22 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+
+    <b-row>
+      <b-col cols="12">
+        <a href="#" class="badge badge-pill badge-primary" style="font-size: 2em">Go</a>
+      </b-col>
+    </b-row>
   </div>
+
 </template>
 
 <script>
+import {djangoMixin} from 'django'
+
 export default {
   name: 'app',
+  mixins: [djangoMixin],
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'

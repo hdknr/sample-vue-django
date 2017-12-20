@@ -1,0 +1,18 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>webapp</title>
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <script>
+      window.Django = {
+          static_base: "{% static '' %}",
+      };
+    </script>
+    <script src="{% static 'sample/build.js' %}"></script>
+  </body>
+</html>

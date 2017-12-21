@@ -77,8 +77,11 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
     },
-    modules: modules,
+    modules: [path.resolve(__dirname, 'node_modules'), path.resolve(__dirname, 'src')].concat(modules),
     extensions: ['*', '.js', '.vue', '.json']
+  },
+  resolveLoader: {
+    modules: [path.resolve(__dirname, 'node_modules')],
   },
   devServer: {
     historyApiFallback: true,

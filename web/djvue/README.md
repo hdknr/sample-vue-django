@@ -35,13 +35,16 @@ $ curl http://192.168.53.3:8080
 $ python ../manage.py djvue modules_json
 $ cat modules.json
 
-["node_modules", "src", "/vagrant/projects/sample-vue-django/web/djvue/vue"]
+["/vagrant/projects/sample-vue-django/web/djvue/vue"]
 ~~~
 
 
 ~~~bash
 $ vim webpack.config.js  
 ~~~
+
+- resolve.moduels: search path to find `source` module
+- resolveLoader.modules: search path to find `loader` package
 
 ~~~js
 ...
@@ -57,9 +60,12 @@ module.exports = {
   ....
   resolve: {
     ...
-    modules: modules,
+    modules: [path.resolve(__dirname, 'node_modules'), path.resolve(__dirname, 'src')].concat(modules),
     ...
   },  
+  resolveLoader: {
+    modules: [path.resolve(__dirname, 'node_modules')],
+  },
   ...
 }
 ~~~

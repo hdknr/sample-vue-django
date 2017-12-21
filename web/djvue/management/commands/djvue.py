@@ -16,7 +16,7 @@ def main(ctx):
 @click.pass_context
 def modules_json(ctx):
     ''' Generate modules.json'''
-    modules = ["node_modules", "src"]
+    modules = []
     for conf in apps.get_app_configs():
         path = os.path.join(conf.path, 'vue')
         if os.path.isdir(path):
